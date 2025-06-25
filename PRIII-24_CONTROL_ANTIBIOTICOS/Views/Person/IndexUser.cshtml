@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    ViewData["Title"] = "Lista de registros de usuarios";
+}
+
+<h1 class="text-center" style="color: #4CAF50;">Registro de Usuarios</h1>
+
+<div class="container mt-5">
+    <div class="row justify-content-between mb-3">
+        <div class="col-auto">
+            <input type="text" class="form-control" placeholder="Buscar" aria-label="Buscar">
+        </div>
+        <div class="col-auto">
+            <a href="/Users/Create" class="btn btn-primary">Crear Usuario</a>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>AVATAR</th>
+                <th>Nombre Completo</th>
+                <th>EMAIL</th>
+                <th>Especialista</th>
+                <th>Activo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.Users) // Asegúrate de que Model.Users contenga la lista de usuarios
+            {
+                <tr>
+                    <td><i class="fas fa-user" style="font-size: 24px; color: #4CAF50;"></i></td> <!-- Ícono de usuario -->
+                    <td>@user.FullName</td>
+                    <td>@user.Email</td>
+                    <td>@user.Specialty</td>
+                    <td><i class="fas @(user.IsActive ? "fa-check-circle text-success" : "fa-times-circle text-danger")"></i></td>
+                    <td>
+                        <a href="/Users/Edit/@user.Id" class="btn btn-warning btn-sm">Editar</a>
+                        <a href="/Users/Delete/@user.Id" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<footer class="text-center mt-5">
+    <p class="small">&copy; 2024 Caja Nacional de Salud - PROA</p>
+</footer>

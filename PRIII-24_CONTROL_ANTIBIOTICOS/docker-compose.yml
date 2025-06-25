@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      SA_PASSWORD: "Denis71463825"   # Cambia a una contraseña segura
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    networks:
+      - redinterna
+
+  webapp:
+    build: .
+    container_name: miappnet
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=bdProa;User Id=sa;Password=Denis71463825
+    depends_on:
+      - sqlserver
+    networks:
+      - redinterna
+
+networks:
+  redinterna:
+    driver: bridge

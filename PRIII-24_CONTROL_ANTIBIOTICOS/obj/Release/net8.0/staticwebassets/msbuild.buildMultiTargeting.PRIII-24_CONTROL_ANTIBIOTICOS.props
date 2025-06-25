@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PRIII-24_CONTROL_ANTIBIOTICOS.props" />
+</Project>

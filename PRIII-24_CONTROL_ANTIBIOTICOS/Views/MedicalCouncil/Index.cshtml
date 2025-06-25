@@ -1,0 +1,147 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h3>Seleccionar Consejeros Médicos</h3>
+
+<!-- Formulario para seleccionar usuario y agregar consejo -->
+<form id="addAdvisorForm">
+    <div class="form-group">
+        <label for="userSelect">Seleccionar Usuario</label>
+        <select class="form-control" id="userSelect" required>
+            <option value="">Selecciona un usuario</option>
+        </select>
+    </div>
+    @* <div class="form-group">
+    <label for="medicalAdvice">Consejo Médico</label>
+    <input type="text" class="form-control" id="medicalAdvice" placeholder="Escribe el consejo médico" required>
+    </div> *@
+    <button type="submit" class="btn btn-primary">Agregar Consejero</button>
+</form>
+
+<h3 class="mt-5">Lista de Miembros del Consejo (Máximo 8)</h3>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Miembros del Consejo</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Nombres</th>
+                        <th>Primer Apellido</th>
+                        <th>Segundo Apeliido</th>
+                        <th>Consejo Médico</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="advisorTableBody">
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        $(function () {
+            // Cargar consejeros actuales al iniciar
+            loadUsers();
+            loadAdvisors();
+
+            // Maneja el envío del formulario para agregar un consejero
+            $("#addAdvisorForm").on("submit", function (event) {
+                event.preventDefault();
+
+                const userId = $("#userSelect").val();
+                const userName = $("#userSelect option:selected").text();
+                const medicalAdvice = $("#medicalAdvice").val();
+
+                $.ajax({
+                    url: '/MedicalCouncil/AddAdvisor',
+                    type: 'POST',
+                    data: { userId: userId },
+                    success: function (response) {
+                        if (response.success) {
+                            loadAdvisors();
+                            $("#userSelect").val("");
+                            // $("#medicalAdvice").val("");
+                            loadUsers();
+                        } else {
+                            alert(response.message);
+                        }
+                    }
+                });
+            });
+
+            // Función para cargar la lista de consejeros
+            function loadAdvisors() {
+                $.ajax({
+                    url: '/MedicalCouncil/GetAdvisors',
+                    type: 'GET',
+                    success: function (response) {
+                        const tableBody = $("#advisorTableBody");
+                        tableBody.empty();
+
+                        response.forEach(function (advisor) {
+                            const row = `
+                                        <tr>
+                                            <td>${advisor.name}</td>
+                                            <td>${advisor.lastName}</td>
+                                            <td>${advisor.secondLastName}</td>
+                                            <td>${advisor.isMedicalCouncil}</td>
+                                            <td>
+                                                <button class="btn btn-danger btn-sm" onclick="removeAdvisor(${advisor.idUser})">Eliminar</button>
+                                            </td>
+                                        </tr>
+                                    `;
+                            tableBody.append(row);
+                        });
+                    }
+                });
+            }
+
+            // Función para eliminar un consejero
+            window.removeAdvisor = function (userId) {
+                $.ajax({
+                    url: '/MedicalCouncil/RemoveAdvisor',
+                    type: 'POST',
+                    data: { userId: userId },
+                    success: function (response) {
+                        if (response.success) {
+                            loadAdvisors();
+                            loadUsers();
+                        } else {
+                            alert(response.message);
+                        }
+                    }
+                });
+            }
+
+            function loadUsers() {
+                $.ajax({
+                    url: '/MedicalCouncil/GetUsers',
+                    type: 'GET',
+                    success: function (users) {
+                        const userSelect = $("#userSelect");
+                        userSelect.empty(); // Limpia el select antes de agregar opciones
+                        userSelect.append(`<option value="">Selecciona un usuario</option>`); // Opción por defecto
+
+                        users.forEach(function (user) {
+                            userSelect.append(`<option value="${user.idUser}">${user.userName}</option>`);
+                        });
+                    },
+                    error: function () {
+                        alert("Error al cargar los usuarios.");
+                    }
+                });
+            }
+        });
+
+    </script>
+}

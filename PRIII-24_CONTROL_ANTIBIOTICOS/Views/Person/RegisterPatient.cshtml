@@ -1,0 +1,82 @@
+﻿@model PRIII_24_CONTROL_ANTIBIOTICOS.Models.Person
+
+@{
+    ViewData["Title"] = "RegisterPatient";
+}
+
+<h1>Registro de Paciente</h1>
+
+<div class="form-container" style="background-color: #f0f0f0; border: 1px solid #ccc; padding: 20px; border-radius: 10px;">
+    <form asp-action="RegisterPatient" method="post">
+
+        <!-- Nombre(s) -->
+        <div class="form-group row">
+            <label asp-for="Name" class="col-sm-2 col-form-label">Nombre(s)</label>
+            <div class="col-sm-10">
+                <input asp-for="Name" class="form-control" placeholder="Nombre(s) del paciente" required>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Primer Apellido -->
+        <div class="form-group row">
+            <label asp-for="LastName" class="col-sm-2 col-form-label">Primer Apellido</label>
+            <div class="col-sm-10">
+                <input asp-for="LastName" class="form-control" placeholder="Primer apellido del paciente" required>
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Segundo Apellido -->
+        <div class="form-group row">
+            <label asp-for="SecondLastName" class="col-sm-2 col-form-label">Segundo Apellido</label>
+            <div class="col-sm-10">
+                <input asp-for="SecondLastName" class="form-control" placeholder="Segundo apellido del paciente">
+                <span asp-validation-for="SecondLastName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Sexo -->
+        <div class="form-group row">
+            <label asp-for="Gender" class="col-sm-2 col-form-label">Sexo</label>
+            <div class="col-sm-10">
+                <div class="form-check form-check-inline">
+                    <input asp-for="Gender" class="form-check-input" type="radio" value="M" id="sexoM">
+                    <label class="form-check-label" for="sexoM">Masculino</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input asp-for="Gender" class="form-check-input" type="radio" value="F" id="sexoF">
+                    <label class="form-check-label" for="sexoF">Femenino</label>
+                </div>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Fecha de Nacimiento -->
+        <div class="form-group row">
+            <label asp-for="DateOfBirth" class="col-sm-2 col-form-label">Fecha de Nacimiento</label>
+            <div class="col-sm-10">
+                <input asp-for="DateOfBirth" class="form-control" type="date">
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Carnet de Identidad -->
+        <div class="form-group row">
+            <label asp-for="Ci" class="col-sm-2 col-form-label">Carnet de Identidad (C.I.)</label>
+            <div class="col-sm-10">
+                <input asp-for="Ci" class="form-control" placeholder="C.I. del paciente" pattern="\d{1,10}" maxlength="10" required>
+                <span asp-validation-for="Ci" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Botón de Enviar -->
+        <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+

@@ -1,0 +1,51 @@
+﻿.treatment-container {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.treatment-header {
+    background-color: #004d34;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    color: white;
+    text-align: center;
+}
+
+.form-group {
+    margin-top: 20px;
+}
+
+    .form-group label {
+        font-weight: bold;
+    }
+
+.textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.radio-group input {
+    margin: 5px 10px 5px 0;
+}
+
+.btn-finalize {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #004d34;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .btn-finalize:hover {
+        background-color: #003023;
+    }

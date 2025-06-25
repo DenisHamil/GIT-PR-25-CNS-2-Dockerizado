@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="PRIII-24CONTROLANTIBIOTICOS20241111152932" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\PROA2024\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\obj\\Release\\net8\.0\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

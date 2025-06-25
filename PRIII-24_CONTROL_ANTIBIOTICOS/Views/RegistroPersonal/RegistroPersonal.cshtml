@@ -1,0 +1,148 @@
+﻿@model PRIII_24_CONTROL_ANTIBIOTICOS.Models.Person;
+
+
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h3>Registro de Personal</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <div class="form-container" style="background-color: #f0f0f0; border: 1px solid #ccc; padding: 20px; border-radius: 10px;">
+                    <form asp-action="RegistroPersonal" asp-controller="RegistroPersonal" method="post">
+                        <!-- Nombres -->
+                        <div class="form-group row">
+                            <label for="nombre" class="col-sm-2 col-form-label">Nombres:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" pattern="[A-Za-zÀ-ÿ\s]{2,}"
+                                       oninput="validateLettersOnly(this)" asp-for="Name" placeholder="Ingrese el nombre(s)" required>
+                            </div>
+                        </div>
+
+                        <!-- Apellido Paterno -->
+                        <div class="form-group row">
+                            <label for="apellidoPaterno" class="col-sm-2 col-form-label">Apellido Paterno:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" pattern="[A-Za-zÀ-ÿ\s]{2,}"
+                                       oninput="validateLettersOnly(this)" asp-for="LastName" placeholder="Ingrese apellido paterno" required>
+                            </div>
+                        </div>
+
+                        <!-- Apellido Materno -->
+                        <div class="form-group row">
+                            <label for="apellidoMaterno" class="col-sm-2 col-form-label">Apellido Materno:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" pattern="[A-Za-zÀ-ÿ\s]{2,}"
+                                       oninput="validateLettersOnly(this)" asp-for="SecondLastName" placeholder="Ingrese apellido materno">
+                            </div>
+                        </div>
+
+                        <!-- Género -->
+                        <div class="form-group row">
+                            <label for="Gender" class="col-sm-2 col-form-label">Género:</label>
+                            <div class="col-sm-10">
+                                <select name="Gender" class="form-control" required>
+                                    <option value="">Seleccione un género</option>
+                                    <option value="M">Masculino</option>
+                                    <option value="F">Femenino</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- CI -->
+                        <div class="form-group row">
+                            <label for="ci" class="col-sm-2 col-form-label">CI:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" asp-for="Ci" placeholder="Ingrese Carnet de identificación" required>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-2 col-form-label">Email:</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" name="email" placeholder="Ingrese su email" required>
+                            </div>
+                        </div>
+
+                        <!-- Fecha de Nacimiento -->
+                        <div class="form-group row">
+                            <label for="DateOfBirth" class="col-sm-2 col-form-label">Fecha de Nacimiento:</label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control" asp-for="DateOfBirth" required>
+                            </div>
+                        </div>
+
+                        <!-- Rol -->
+                        <div class="form-group row">
+                            <label for="role" class="col-sm-2 col-form-label">Rol:</label>
+                            <div class="col-sm-10">
+                                <select name="role" class="form-control" required>
+                                    <option value="" disabled>Seleccione su Rol</option>
+                                    <option value="Director">Director</option>
+                                    <option value="Personal Hospitalario">Personal Hospitalario</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Especialidad -->
+                        <div class="form-group row">
+                            <label for="especialidad" class="col-sm-2 col-form-label">Especialidad:</label>
+                            <div class="col-sm-10">
+                                <select name="IdSpecialty" class="form-control" required>
+                                    <option value="">Seleccione una especialidad</option>
+                                    @foreach (var specialty in ViewBag.Specialties)
+                                    {
+                                        <option value="@specialty.IdSpecialty">@specialty.Name</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="form-group row">
+                            <div class="col-sm-10 offset-sm-2">
+                                <button onclick="window.history.back();" class="btn btn-secondary">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function validateLettersOnly(input) {
+        var regex = /^[A-Za-zÀ-ÿ\s]{2,}$/;
+        if (!regex.test(input.value)) {
+            input.setCustomValidity('Este campo debe contener al menos 2 caracteres y solo letras.');
+        } else {
+            input.setCustomValidity('');
+        }
+    }
+        @if (!ViewData.ModelState.IsValid)
+        {
+                <div class="alert alert-danger">
+                    <ul>
+                    @foreach (var modelState in ViewData.ModelState.Values)
+                    {
+                        foreach (var error in modelState.Errors)
+                        {
+                                <li>@error.ErrorMessage</li>
+                        }
+                    }
+                    </ul>
+                </div>
+        }
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+                <div class="alert alert-success">
+                @TempData["SuccessMessage"]
+                </div>
+        }
+</script>
+
+

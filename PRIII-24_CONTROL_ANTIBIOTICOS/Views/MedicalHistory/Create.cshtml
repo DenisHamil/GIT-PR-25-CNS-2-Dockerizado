@@ -1,0 +1,811 @@
+﻿@model PRIII_24_CONTROL_ANTIBIOTICOS.Models.MedicalHistory
+
+@{
+    ViewData["Title"] = "Registro de Paciente";
+    int idPatient = Model.IdPatient;
+}
+
+<h1>Registro de Paciente</h1>
+<hr />
+
+<div class="container">
+    <div class="row">
+        <!-- Columna Izquierda - Detalles del Paciente -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-white" style="background-color:#00573D">
+                    DETALLE DEL PACIENTE
+                </div>
+                <div class="card-body">
+                    <form enctype="multipart/form-data" id="create-form">
+
+                        <input type="hidden" asp-for="IdPatient" value="@idPatient" />
+
+                        <!-- Talla -->
+                        <div class="form-group">
+                            <label asp-for="Height" class="control-label">Talla (metros):</label>
+                            <input asp-for="Height" class="form-control" id="Height" type="number" step="0.01" placeholder="Ingrese la talla en cm" />
+                            <span asp-validation-for="Height" class="text-danger"></span>
+                        </div>
+                        <!-- Peso -->
+                        <div class="form-group">
+                            <label asp-for="Weight" class="control-label">Peso (kg):</label>
+                            <input asp-for="Weight" class="form-control" id="Weight" type="number" step="0.01" placeholder="Ingrese el peso en kg" />
+                            <span asp-validation-for="Weight" class="text-danger"></span>
+                        </div>
+                        <!-- IMC -->
+                        <div class="form-group">
+                            <label asp-for="Bmi" class="control-label">Índice de Masa Corporal (IMC):</label>
+                            <input asp-for="Bmi" class="form-control" id="Bmi" type="number" step="0.01" readonly />
+                        </div>
+                        <!-- Clasificación del IMC -->
+                        <div class="form-group">
+                            <label asp-for="Bmiclassification" class="control-label">Clasificación del IMC:</label>
+                            <input asp-for="Bmiclassification" class="form-control" id="Bmiclassification" readonly />
+                            @* <span asp-validation-for="Bmiclassification" class="text-danger"></span> *@
+                        </div>
+
+                        <!-- Alergias -->
+                        <div class="form-group">
+                            <label for="selectedAllergies" class="control-label">Alergias</label>
+                            <select id="selectedAllergies" name="selectedAllergies" class="form-control" multiple="multiple">
+                                @foreach (var allergy in (SelectList)ViewData["Allergies"])
+                                {
+                                    <option value="@allergy.Value">@allergy.Text</option>
+                                }
+                            </select>
+                        </div>
+
+                        <!-- Medicación de Consumo Habitual -->
+                        <div class="form-group">
+                            <label>Medicación de Consumo Habitual</label>
+                            <div class="form-group">
+                                <label for="selectedMedications" class="control-label">Medicamento:</label>
+                                <select id="selectedMedications" name="selectedMedications" class="form-control">
+                                    @foreach (var medication in (SelectList)ViewData["Medications"])
+                                    {
+                                        <option value="@medication.Value">@medication.Text</option>
+                                    }
+                                </select>
+                            </div>
+                            <input type="text" id="dosageInput" class="form-control mt-2" placeholder="Dosis (mg)" />
+                            <input type="text" id="frequencyInput" class="form-control mt-2" placeholder="Frecuencia" />
+                            <div class="form-group administration-section">
+                                <label>Vía de administración</label>
+                                <select id="administrationRoute" class="form-control">
+                                    <option value="VO">Oral</option>
+                                    <option value="IV">Intravenosa</option>
+                                    <option value="Otra">Otra</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-outline-secondary mt-2" type="button" onclick="addMedication()">Agregar Medicación</button>
+                        </div>
+
+                        <!-- Lista de Medicaciones -->
+                        <div class="mt-3">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Medicación de Consumo Habital</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="medicationTable" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Medicamento</th>
+                                                    <th>Dosis</th>
+                                                    <th>Frecuencia</th>
+                                                    <th>Vía de administración</th>
+                                                    <th>Acción</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Aquí vendrán las filas dinámicas de medicaciones -->
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Diagnóstico de Ingreso -->
+                        <div class="form-group">
+                            <label for="IdDiagnosis" class="control-label">Diagnóstico de ingreso</label>
+                            <select id="IdDiagnosis" name="IdDiagnosis" class="form-control">
+                                @foreach (var diagnosis in (SelectList)ViewData["Diagnosis"])
+                                {
+                                    <option value="@diagnosis.Value">@diagnosis.Text</option>
+                                }
+                            </select>
+                        </div>
+
+                        <!-- <input asp-for="IdDiagnosis" type="hidden" value="1" /> -->
+                        <!-- Justificativo -->
+                        <div class="form-group mt-4">
+                            <label> Justificativo:</label>
+                            <textarea class="form-control" name="Justificative" id="Justificative" placeholder="Ingrese Justificativo Clínico..." maxlength="700"></textarea>
+                        </div>
+
+                        <!--Laboratorios-->
+                        <!-- Archivo Laboratorio -->
+                        <div class="form-group mt-4">
+                            <label>Laboratorio Clínico:</label>
+                            <div class="input-group">
+                                <input type="file" asp-for="Archivepdf" class="form-control" id="labFile" />
+                                <span asp-validation-for="Archivepdf" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectedLaboratories" class="control-label">Laboratorio:</label>
+                            <select id="selectedLaboratories" name="selectedLaboratories" class="form-control" multiple="multiple">
+                                @foreach (var laboratory in (SelectList)ViewData["Laboratories"])
+                                {
+                                    <option value="@laboratory.Value">@laboratory.Text</option>
+                                }
+                            </select>
+                        </div>
+                        <!-- Seleccionar Cultivo -->
+                        @*  <div class="form-group">
+                        <label>Seleccionar Cultivo:</label>
+                        <select class="form-control">
+                        <option>Seleccionar Cultivo</option>
+                        </select>
+                        </div> *@
+
+                        @* <div class="form-group mt-4">
+                        <input type="submit" value="Guardar" class="btn btn-primary" />
+                        </div> *@
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- Columna Derecha - Solicitud de Administración -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-white" style="background-color:#00573D">
+                    SOLICITUD DE ADMINISTRACIÓN
+                </div>
+                <div class="card-body" style="background-color: #e1e1e1;">
+                    <form id="request-form">
+
+                        <input type="hidden" id="requestIdMedicalHistory" value="1" />
+                        <!--Aqui tenemos que agarrar el id del usuario que esta solicitando la administracion de medicamento -->
+                        <input type="hidden" id="requestIdUser" value="4" />
+
+
+                        <!-- Código de Paciente -->
+                        <div class="form-group">
+                            <label>Código de Paciente:</label>
+                            <input type="text" class="form-control" readonly value="@Model.IdPatientNavigation.PatientCode" />
+                        </div>
+
+                        <!-- Detalle de Medicación -->
+                        <div class="form-group">
+                            <label>Antibiótico sugerido para administración:</label>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="Category">Categoría</label>
+                                    <select class="form-control" id="Category" name="Category">
+                                        <option value="Antibiotico">Antibiótico</option>
+                                        @* <option value="Antiinflamatorio">Antiinflamatorio</option>
+                                        <option value="Analgesico">Analgésico</option> *@
+                                        <!-- Agrega más opciones aquí según sea necesario -->
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="Medication">Medicamento</label>
+                                    <select id="requestMedications" name="requestMedications" class="form-control">
+                                        @foreach (var medication in (SelectList)ViewData["Medications"])
+                                        {
+                                            <option value="@medication.Value">@medication.Text</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+
+                            <input id="requestDosage" type="text" class="form-control mt-2" placeholder="Dosis (mg)" />
+                            <input id="requestFrecuency" type="text" class="form-control mt-2" placeholder="Frecuencia" />
+                            <div class="form-group administration-section">
+                                <label>Vía de administración</label>
+                                <select id="requestAdministrationMedication" class="form-control">
+                                    <option value="VO">Oral</option>
+                                    <option value="IV">Intravenosa</option>
+                                    <option value="Otra">Otra</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Botón de agregar medicación -->
+                        <button class="btn btn-outline-secondary mt-2" onclick="addRequestMedication()" type="button" style="background-color:#00573D; color:white">Agregar Medicación</button>
+
+                        <!-- Lista de Medicación -->
+                        <div class="mt-3">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Medicación Sugerida</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="requestMedicationTable" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Medicamento</th>
+                                                    <th>Dosis</th>
+                                                    <th>Frecuencia</th>
+                                                    <th>Vía de administración</th>
+                                                    <th>Acción</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Aquí vendrán las filas dinámicas de medicación -->
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Motivo de Administración -->
+                        <div class="form-group mt-4">
+                            <label>Motivo de Administración (Opcional):</label>
+                            <textarea class="form-control" id="requestMedicalJustification" placeholder="Motivo de administración..."></textarea>
+                        </div>
+
+                        <!-- Estado de Administración -->
+                        <div class="form-group mt-4">
+                            <label>Estado de Administración:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="requestPriority" id="regular" value="Regular" checked>
+                                <label class="form-check-label" for="regular">Regular</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="requestPriority" id="urgente" value="Urgente">
+                                <label class="form-check-label" for="urgente">Urgente</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="requestPriority" id="emergencia" value="Emergencia">
+                                <label class="form-check-label" for="emergencia">Emergencia</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input id="submit-both-forms" type="submit" value="Enviar Solicitud" class="btn btn-success" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        var addMedicamento = [];
+        // alert("test")
+        // $(document).ready(function() {
+
+        //     // $('#create-form').submit(function(event) {
+
+        //     //     // Evitar el envío del formulario
+        //     //     event.preventDefault();
+
+        //     //     if (!validateForm()) {
+        //     //         return; // Si la validación falla, no continúa
+        //     //     }
+
+
+        //     //     $.blockUI({
+        //     //         css: {
+        //     //             border: 'none',
+        //     //             padding: '15px',
+        //     //             backgroundColor: '#000',
+        //     //             '-webkit-border-radius': '10px',
+        //     //             '-moz-border-radius': '10px',
+        //     //             opacity: .5,
+        //     //             color: '#fff'
+        //     //         }
+        //     //     });
+
+        //     //     let datosJSON = {
+        //     //         IdMedicalHistory: 1,
+        //     //         Weight: parseFloat($("#Weight").val()),
+        //     //         Height: parseFloat($("#Height").val()),
+        //     //         Bmi: parseFloat($("#Bmi").val()),
+        //     //         Bmiclassification: $("#Bmiclassification").val(),
+        //     //         IdPatient: parseInt($("#IdPatient").val()),
+        //     //         IdDiagnosis: parseInt($("#IdDiagnosis").val()),
+        //     //         Justificative: $("#Justificative").val(),
+        //     //         archivoBase64: null, // El archivo irá aquí como base64
+        //     //         nombreArchivo: null, // El nombre del archivo también lo agregamos
+        //     //         Medicaciones: addMedicamento,
+        //     //         Allergies: $("#selectedAllergies").val(),
+        //     //         Laboratories: $("#selectedLaboratories").val()
+        //     //     };
+
+        //     //     console.log(datosJSON, '@Url.Action("Create", "MedicalHistory")');
+        //     //     // Leer el archivo seleccionado
+        //     //     var archivo = $('#labFile')[0].files[0];
+        //     //     var reader = new FileReader();
+
+        //     //     reader.onload = function(e) {
+        //     //         // Convertir archivo a Base64
+        //     //         datosJSON.archivoBase64 = e.target.result.split(',')[1]; // Solo la parte base64
+        //     //         datosJSON.nombreArchivo = archivo.name;
+
+        //     //         // Enviar el objeto JSON con el archivo como base64
+        //     //         $.ajax({
+        //     //             url: '@Url.Action("Save", "MedicalHistory")', // Cambia esta URL por tu endpoint
+        //     //             type: 'POST',
+        //     //             data: JSON.stringify(datosJSON),
+        //     //             contentType: 'application/json', // Indicar que se envía un JSON
+        //     //             success: function(response) {
+        //     //                 if (response?.success) {
+        //     //                     //alert('Datos y archivo enviados exitosamente. Redirect.');
+        //     //                     window.location.href = "@Url.Action("Index", "MedicalHistory", new { id = idPatient })";
+
+        //     //                 } else {
+        //     //                     console.log(response)
+        //     //                     $.unblockUI();
+        //     //                     alert("Error: " + response?.message)
+
+        //     //                 }
+        //     //                 //redirect a una pagina
+        //     //             },
+        //     //             error: function(xhr, status, error) {
+        //     //                 console.log('Error: ' + error);
+        //     //             }
+        //     //         });
+        //     //     };
+
+        //     //     // Leer el archivo como base64
+        //     //     reader.readAsDataURL(archivo);
+
+        //     // });
+
+        //     // // Selecciona todas las secciones de administración
+        //     // document.querySelectorAll('.administration-section').forEach(function (section) {
+        //     //     const otherRadio = section.querySelector('input[value="Other"]');
+        //     //     const otherTextInput = section.querySelector('.other-text');
+
+        //     //     // Mostrar/ocultar campo de texto si se selecciona "Otra"
+        //     //     section.querySelectorAll('input[type="radio"]').forEach(function (radio) {
+        //     //         radio.addEventListener('change', function () {
+        //     //             if (radio.value === 'Other') {
+        //     //                 otherTextInput.style.display = 'block';
+        //     //             } else {
+        //     //                 otherTextInput.style.display = 'none';
+        //     //             }
+        //     //         });
+        //     //     });
+        //     // });
+        // });
+
+        document.getElementById("Weight").addEventListener("input", calculateBMI);
+        document.getElementById("Height").addEventListener("input", calculateBMI);
+
+        function calculateBMI() {
+            var weight = parseFloat(document.getElementById("Weight").value);
+            var height = parseFloat(document.getElementById("Height").value);
+
+            if (!isNaN(weight) && weight > 0 && !isNaN(height) && height > 0) {
+                var bmi = weight / (height * height);
+                document.getElementById("Bmi").value = bmi.toFixed(2); // Asegúrate de usar el punto como separador decimal
+
+                var classification = "";
+
+                if (bmi < 18.5) {
+                    classification = "Bajo peso";
+                } else if (bmi >= 18.5 && bmi < 24.9) {
+                    classification = "Peso normal";
+                } else if (bmi >= 25 && bmi < 29.9) {
+                    classification = "Sobrepeso";
+                } else {
+                    classification = "Obesidad";
+                }
+
+                document.getElementById("Bmiclassification").value = classification;
+            } else {
+                document.getElementById("Bmi").value = "";
+                document.getElementById("Bmiclassification").value = "";
+            }
+        }
+
+
+        function addMedication() {
+            const medicationSelect = document.getElementById('selectedMedications');
+            const dosageInput = document.getElementById('dosageInput');
+            const frequencyInput = document.getElementById('frequencyInput');
+            const administrationRoute = document.getElementById('administrationRoute');
+
+            const medication = medicationSelect.options[medicationSelect.selectedIndex].text;
+            const medicationId = medicationSelect.value ?? '0';
+            const dosage = dosageInput.value;
+            const frequency = frequencyInput.value;
+            const route = administrationRoute.value;
+
+            if (medication && dosage && frequency) {
+                const tableBody = document.querySelector('#medicationTable tbody');
+                const newRow = tableBody.insertRow();
+                addMedicamento.push({
+                    idMedication: parseInt(medicationId),
+                    Medicamento: medication,
+                    Dosis: parseFloat(dosage),
+                    Frecuency: frequency,
+                    Administration: route
+                });
+                console.log(addMedicamento);
+                newRow.innerHTML = `
+                                <td>${medication}</td>
+                                <td>${dosage}</td>
+                                <td>${frequency}</td>
+                                <td>${route}</td>
+                                        <td><button class="btn btn-danger btn-sm" onclick="removeMedication(this,${medicationId})">Eliminar</button></td>
+                            `;
+
+                // Limpiar los campos después de agregar
+                dosageInput.value = '';
+                frequencyInput.value = '';
+
+            } else {
+                alert('Por favor, complete todos los campos antes de agregar Medicación de Consumo Habitual.');
+            }
+        }
+
+        function removeMedication(button, id) {
+            const row = button.parentNode.parentNode;
+            console.log(row)
+            console.log(button)
+            row.parentNode.removeChild(row);
+
+            let index = addMedicamento.findIndex(objeto => objeto.idMedication == id);
+
+            if (index !== -1) {
+                addMedicamento.splice(index, 1);  // Elimina el objeto del array
+            }
+
+        }
+
+
+        // Función de validación del formulario
+        function validateForm() {
+            let isValid = true;
+            let errors = [];
+
+            const weight = $("#Weight").val();
+            const height = $("#Height").val();
+            const bmi = $("#Bmi").val();
+            const diagnosis = $("#IdDiagnosis").val();
+            const justification = $("#Justificative").val();
+
+            // Validar campos obligatorios
+            if (!weight || weight <= 0) {
+                isValid = false;
+                errors.push("El campo 'Peso' es obligatorio y debe ser un número válido.");
+            }
+            if (!height || height <= 0) {
+                isValid = false;
+                errors.push("El campo 'Altura' es obligatorio y debe ser un número válido.");
+            }
+            if (!bmi || bmi <= 0) {
+                isValid = false;
+                errors.push("El campo 'IMC' es obligatorio y debe ser un número válido.");
+            }
+            if (!diagnosis) {
+                isValid = false;
+                errors.push("Debe seleccionar un diagnóstico.");
+            }
+            if (!justification) {
+                isValid = false;
+                errors.push("Debe proporcionar una justificación.");
+            }
+
+            // Mostrar errores si existen
+            if (!isValid) {
+                alert(errors.join("\n"));
+            }
+
+            return isValid;
+        }
+
+
+
+        var requestMedications = [];
+
+        function addRequestMedication() {
+            const medicationSelect = document.getElementById('requestMedications');
+            const dosageInput = document.getElementById('requestDosage');
+            const frequencyInput = document.getElementById('requestFrecuency');
+            const administrationRoute = document.getElementById('requestAdministrationMedication');
+
+            const medication = medicationSelect.options[medicationSelect.selectedIndex].text;
+            const medicationId = medicationSelect.value ?? '0';
+            const dosage = dosageInput.value;
+            const frequency = frequencyInput.value;
+            const route = administrationRoute.value;
+
+            if (medication && dosage && frequency) {
+                const tableBody = document.querySelector('#requestMedicationTable tbody');
+                const newRow = tableBody.insertRow();
+                requestMedications.push({
+                    idMedication: parseInt(medicationId),
+                    Medicamento: medication,
+                    Dosage: parseFloat(dosage),
+                    Frecuency: frequency,
+                    Administration: route
+                });
+                console.log(requestMedications);
+                newRow.innerHTML = `
+                                        <td>${medication}</td>
+                                        <td>${dosage}</td>
+                                        <td>${frequency}</td>
+                                        <td>${route}</td>
+                                        <td><button class="btn btn-danger btn-sm" onclick="removeRequestMedication(this,${medicationId})">Eliminar</button></td>
+                                    `;
+
+                // Limpiar los campos después de agregar
+                dosageInput.value = '';
+                frequencyInput.value = '';
+
+            } else {
+                alert('Por favor, complete todos los campos antes de agregar Medicación Prescrita.');
+            }
+        }
+
+        function removeRequestMedication(button, id) {
+            const row = button.parentNode.parentNode;
+            console.log(row)
+            console.log(button)
+            row.parentNode.removeChild(row);
+
+            let index = requestMedications.findIndex(objeto => objeto.idMedication == id);
+
+            if (index !== -1) {
+                requestMedications.splice(index, 1);  // Elimina el objeto del array
+            }
+
+        }
+
+    </script>
+
+    <script>
+        // $(document).ready(function () {
+
+        //     $('#request-form').submit(function (event) {
+        //         // Evitar el envío del formulario
+        //         event.preventDefault();
+
+        //             if (requestMedications.length == 0)
+        //             {
+        //                 alert("Debe agregar al menos una medicación antes de enviar la solicitud.");
+        //                 return;
+        //             }
+
+        //         $.blockUI({
+        //             css: {
+        //                 border: 'none',
+        //                 padding: '15px',
+        //                 backgroundColor: '#000',
+        //                 '-webkit-border-radius': '10px',
+        //                 '-moz-border-radius': '10px',
+        //                 opacity: .5,
+        //                 color: '#fff'
+        //             }
+        //         });
+
+        //         let requestJSON = {
+
+        //             IdUser: $("#requestIdUser").val(),
+        //             MedicalJustification: $("#requestMedicalJustification").val(),
+        //             Priority: document.querySelector('input[name="requestPriority"]:checked').value,
+        //             IdMedicalHistory: $("#requestIdMedicalHistory").val(),
+        //             Status: 'Pendiente',
+        //             RequestMedications: requestMedications
+        //         };
+
+        //         console.log(requestJSON, '@Url.Action("SubmitRequest", "AdministrationRequest")');
+        //         // Leer el archivo seleccionado
+
+        //         // Enviar el objeto JSON con el archivo como base64
+        //         $.ajax({
+        //             url: '@Url.Action("SubmitRequest", "AdministrationRequest")', // Cambia esta URL por tu endpoint
+        //             type: 'POST',
+        //             data: JSON.stringify(requestJSON),
+        //             contentType: 'application/json', // Indicar que se envía un JSON
+        //             success: function (response) {
+        //                 if (response?.success) {
+        //                     //alert('Datos y archivo enviados exitosamente. Redirect.');
+        //                     window.location.href = "@Url.Action("Index", "MedicalHistory", new { id = idPatient })";
+
+        //                 } else {
+        //                     console.log(response)
+        //                     $.unblockUI();
+        //                     alert("Error: " + response?.message)
+
+        //                 }
+        //                 //redirect a una pagina
+        //             },
+        //             error: function (xhr, status, error) {
+        //                 console.log('Error: ' + error);
+        //             }
+        //         });
+
+        //     });
+        // });
+
+        function validateFormRequest() {
+            let isValid = true;
+            let errors = [];
+
+            var requestMedications = [];
+
+            if (requestMedications.length === 0) {
+                isValid = false;
+                errors.push("Debe agregar al menos una medicación antes de enviar la solicitud.");
+            }
+
+            return isValid;
+        }
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            // ✅ BOTÓN Enviar: bloquea, muestra alerta y lanza submit
+            $('#submit-both-forms').click(function (event) {
+                event.preventDefault();
+
+                // Bloquea el botón
+                $(this).prop('disabled', true).text('Enviando...');
+
+                // Alerta de carga
+                Swal.fire({
+                    title: 'Enviando...',
+                    text: 'Por favor, espere mientras se guarda la información.',
+                    icon: 'info',
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+
+                // Enviar formulario médico
+                $('#create-form').submit();
+            });
+
+            // ✅ SUBMIT FORMULARIO 1: Historia médica
+            $('#create-form').submit(function (event) {
+                event.preventDefault();
+
+                if (!validateForm()) return;
+
+                if (requestMedications.length === 0) {
+                    Swal.close();
+                    alert("Debe agregar al menos una medicación antes de enviar la solicitud.");
+                    $('#submit-both-forms').prop('disabled', false).text('Enviar Solicitud');
+                    return;
+                }
+
+                let datosJSON = {
+                    Weight: parseFloat($("#Weight").val()),
+                    Height: parseFloat($("#Height").val()),
+                    Bmi: parseFloat($("#Bmi").val()),
+                    Bmiclassification: $("#Bmiclassification").val(),
+                    IdPatient: parseInt($("#IdPatient").val()),
+                    IdDiagnosis: parseInt($("#IdDiagnosis").val()),
+                    Justificative: $("#Justificative").val(),
+                    archivoBase64: null,
+                    nombreArchivo: null,
+                    Medicaciones: addMedicamento,
+                    Allergies: $("#selectedAllergies").val(),
+                    Laboratories: $("#selectedLaboratories").val()
+                };
+
+                var archivo = $('#labFile')[0].files[0];
+
+                if (archivo) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        datosJSON.archivoBase64 = e.target.result.split(',')[1];
+                        datosJSON.nombreArchivo = archivo.name;
+                        enviarPrimerAjax(datosJSON);
+                    };
+                    reader.readAsDataURL(archivo);
+                } else {
+                    enviarPrimerAjax(datosJSON);
+                }
+            });
+
+            // ✅ ENVÍO AJAX del primer formulario
+            function enviarPrimerAjax(datosJSON) {
+                $.ajax({
+                    url: '@Url.Action("Save", "MedicalHistory")',
+                    type: 'POST',
+                    data: JSON.stringify(datosJSON),
+                    contentType: 'application/json',
+                    success: function (response) {
+                        if (response?.success) {
+                            var generatedId = response.generatedId;
+                            enviarSegundoFormulario(generatedId);
+                        } else {
+                            Swal.close();
+                            $('#submit-both-forms').prop('disabled', false).text('Enviar Solicitud');
+                            alert("Error: " + response?.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        Swal.close();
+                        $('#submit-both-forms').prop('disabled', false).text('Enviar Solicitud');
+                        alert("Error: " + error);
+                    }
+                });
+            }
+
+            // ✅ ENVÍO AJAX del segundo formulario (solicitud administración)
+            function enviarSegundoFormulario(generatedId) {
+                let requestJSON = {
+                    IdUser: $("#requestIdUser").val(),
+                    MedicalJustification: $("#requestMedicalJustification").val(),
+                    Priority: document.querySelector('input[name="requestPriority"]:checked').value,
+                    IdMedicalHistory: generatedId,
+                    Status: 'Pendiente',
+                    RequestMedications: requestMedications
+                };
+
+                $.ajax({
+                    url: '@Url.Action("SubmitRequest", "AdministrationRequest")',
+                    type: 'POST',
+                    data: JSON.stringify(requestJSON),
+                    contentType: 'application/json',
+                    success: function (response) {
+                        if (response?.success) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: '¡Solicitud enviada!',
+                                text: 'La solicitud fue registrada correctamente.',
+                                timer: 2000,
+                                showConfirmButton: false
+                            });
+
+                            setTimeout(() => {
+                                window.location.href = "@Url.Action("Index", "MedicalHistory", new { id = idPatient })";
+                            }, 2000);
+                        } else {
+                            Swal.close();
+                            $('#submit-both-forms').prop('disabled', false).text('Enviar Solicitud');
+                            alert("Error: " + response?.message);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        Swal.close();
+                        $('#submit-both-forms').prop('disabled', false).text('Enviar Solicitud');
+                        alert("Error: " + error);
+                    }
+                });
+            }
+
+        });
+    </script>
+
+}

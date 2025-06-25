@@ -1,0 +1,107 @@
+﻿@model IEnumerable<PRIII_24_CONTROL_ANTIBIOTICOS.Models.Patient>
+
+@{
+    ViewData["Title"] = "Lista de Pacientes";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Lista de Pacientes</h1>
+
+    @if (User.IsInRole("DIRECTOR"))
+    {
+        <a asp-controller="Person" asp-action="RegisterPatient" class="btn btn-primary">Registrar Paciente</a>
+    }
+</div>
+
+<!-- Formulario oculto solo para generar el token -->
+<form id="antiForgeryForm">
+    @Html.AntiForgeryToken()
+</form>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Pacientes</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.First().PatientCode)</th>
+                        <th>@Html.DisplayNameFor(model => model.First().IdPersonNavigation.Name)</th>
+                        <th>@Html.DisplayNameFor(model => model.First().IdPersonNavigation.LastName)</th>
+                        <th>@Html.DisplayNameFor(model => model.First().IdPersonNavigation.SecondLastName)</th>
+                        <th>@Html.DisplayNameFor(model => model.First().IdPersonNavigation.Ci)</th>
+                        <th>@Html.DisplayNameFor(model => model.First().IdPersonNavigation.DateOfBirth)</th>
+                        <th>@Html.DisplayNameFor(model => model.First().IdPersonNavigation.Gender)</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.PatientCode</td>
+                            <td>@item.IdPersonNavigation?.Name</td>
+                            <td>@item.IdPersonNavigation?.LastName</td>
+                            <td>@item.IdPersonNavigation?.SecondLastName</td>
+                            <td>@item.IdPersonNavigation?.Ci</td>
+                            <td>@item.IdPersonNavigation?.DateOfBirth.ToShortDateString()</td>
+                            <td>@item.IdPersonNavigation?.Gender</td>
+                            <td>
+                                <a asp-controller="MedicalHistory" asp-action="Index" asp-route-id="@item.IdPatient" class="btn btn-info btn-sm">Historiales Médicos</a>
+
+                                @if (User.IsInRole("DIRECTOR") || User.IsInRole("PERSONAL HOSPITALARIO"))
+                                {
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="eliminarPaciente(@item.IdPatient)">Eliminar</button>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        function eliminarPaciente(idPaciente) {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: 'No podrás revertir esta acción.',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const token = document.querySelector('#antiForgeryForm input[name="__RequestVerificationToken"]').value;
+
+                    fetch('/Patient/DeleteConfirmed', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: `__RequestVerificationToken=${encodeURIComponent(token)}&id=${idPaciente}`
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            Swal.fire('Eliminado', data.message, 'success').then(() => location.reload());
+                        } else {
+                            Swal.fire('Error', data.message, 'error');
+                        }
+                    })
+                    .catch(() => {
+                        Swal.fire('Error', 'Ocurrió un error al intentar eliminar.', 'error');
+                    });
+                }
+            });
+        }
+    </script>
+}

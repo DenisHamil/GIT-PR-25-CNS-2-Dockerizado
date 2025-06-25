@@ -1,0 +1,75 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"]="Registro de Personal";
+}
+
+<h1>Registro de Paciente</h1>
+<hr />
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h3 class="text-center mb-4">Registro de Personal</h3>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="/path-to-your-image.png" alt="Avatar" class="img-fluid rounded mx-auto d-block mb-4" style="max-width: 150px;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="nombres">Nombres:</label>
+                                    <input type="text" class="form-control" id="nombres" placeholder="Ingrese el nombre(s)" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="apellidoPaterno">Apellido Paterno:</label>
+                                    <input type="text" class="form-control" id="apellidoPaterno" placeholder="Ingrese apellido paterno" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="apellidoMaterno">Apellido Materno:</label>
+                                    <input type="text" class="form-control" id="apellidoMaterno" placeholder="Ingrese apellido materno" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="genero">Género:</label>
+                                    <select class="form-control" id="genero" required>
+                                        <option value="">Seleccione su género</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="femenino">Femenino</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rol">Rol:</label>
+                                    <select class="form-control" id="rol" required>
+                                        <option value="">Seleccione su rol</option>
+                                        <option value="admin">Administrador</option>
+                                        <option value="user">Usuario</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="especialista">Especialista:</label>
+                                    <input type="text" class="form-control" id="especialista" placeholder="Ingrese la especialidad" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-right mt-4">
+                            <button type="button" class="btn btn-secondary">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5">
+        <p class="small">Create by <a href="#" class="text-info">TecnoJuniors</a> · v0.0.0 (Silver Surfer)<br>&copy; 2024 PROA · by Tecno Juniors.</p>
+    </footer>
+</div>

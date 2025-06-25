@@ -1,0 +1,43 @@
+﻿@model PRIII_24_CONTROL_ANTIBIOTICOS.Models.TreatmentObservation
+
+@{
+    ViewData["Title"] = "Historial Médico del Paciente";
+    int medicalHistoryId = ViewData["MedicalHistoryId"] != null ? (int)ViewData["MedicalHistoryId"] : 0;
+}
+
+<link href="~/css/OwnStyleSheet.css" rel="stylesheet" />
+
+<div class="treatment-container">
+    <h2>Observación de tratamiento</h2>
+
+    <div class="treatment-header">
+        <h3>Observacion de tratamiento medico</h3>
+    </div>
+
+    <form method="post" asp-action="TreatmentObservation">
+        <input type="hidden" name="IdTO" value="@medicalHistoryId" />
+        <div class="form-group">
+            <label for="Observation">Observación de tratamiento</label>
+            <textarea asp-for="Observation" id="Observation" name="Observation" rows="4" class="textarea" placeholder="Escriba la observación aquí...">@* @Model.Observation *@</textarea>
+            <span asp-validation-for="Observation" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label>Estado de tratamiento</label>
+            <div class="radio-group">
+                <input asp-for="Status" type="radio" id="Regular" name="Status" value="Regular">
+                <label for="Regular">Regular</label><br>
+                <input asp-for="Status" type="radio" id="Exitoso" name="Status" value="Exitoso">
+                <label for="Exitoso">Exitoso</label><br>
+                <input asp-for="Status" type="radio" id="Ineficaz" name="Status" value="Ineficaz">
+                <label for="Ineficaz">Ineficaz</label>
+                <br />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar Observación</button>
+
+
+        <button type="submit" class="btn-finalize">Finalizar</button>
+    </form>
+</div>

@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenidos al Sistema PROA</h1>
+    <p>Sistema de Control de Antibióticos PROA</p>
+</div>
+
+<div id="vote"></div>
+
+@section Scripts {
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        $(function () {
+            loadVotation();
+        });
+
+        function loadVotation(){
+            let innerHtml = "<h2>Solicitudes Pendientes</h2><table class='table table-bordered'><thead><tr><th>Justificacion</th><th>Prioridad</th><th>Acciones</th></tr></thead><tbody>";
+            $.ajax({
+                url: '@Url.Action("GetVotes", "Vote")',  // Asegúrate de que esta URL coincide con tu ruta de controlador
+                type: 'GET',
+                dataType: 'json',
+                success: function (response) {
+                    // Itera sobre el resultado y muestra los datos como desees
+                    $.each(response, function (index, item) {
+                        console.log("Id:", item.Id);
+                        console.log("Justificación Médica:", item.medicalJustification);
+                        console.log("Prioridad:", item.priority);
+                        innerHtml +=
+                            `<tr>
+                            <td>${item.medicalJustification}</td>
+                            <td>${item.priority}</td>
+                            <td><a href="@Url.Action("Details", "Vote")/${item.id}">Votar</a></td>
+                            </tr>`;
+                    });
+                    if (Array.isArray(response)) {
+                        if (response.length > 0) {
+                            innerHtml += '</tbody></table>';
+                            $('#vote').append(innerHtml);
+                        }
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error en la llamada AJAX:", error);
+                }
+            });
+
+        }
+    </script>
+}

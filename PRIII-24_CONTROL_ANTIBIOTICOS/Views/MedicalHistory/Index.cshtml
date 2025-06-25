@@ -1,0 +1,49 @@
+﻿@model IEnumerable<PRIII_24_CONTROL_ANTIBIOTICOS.Models.MedicalHistory>
+
+@{
+    ViewData["Title"] = "Historial Médico del Paciente";
+    int patientId = ViewData["PatientId"] != null ? (int)ViewData["PatientId"] : 0;
+}
+
+<h1>Historiales Médicos del Paciente</h1>
+
+<div class="text-right mb-3">
+    <a asp-action="Create" asp-route-id="@patientId" class="btn btn-success">Hacer una nueva Consulta</a>
+</div>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Historiales</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Historial Médico</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>Historial @item.IdMedicalHistory</td>
+
+                            <td>@item.RegisterDate.ToString("dd/MM/yyyy")</td>
+                            <td>
+                                @* <a asp-action="Details" asp-route-id="@item.IdMedicalHistory" class="btn btn-info btn-sm">Ver Historial</a> *@
+                                <a asp-controller="Vote" asp-action="Summary" asp-route-id="@item.IdMedicalHistory" class="btn btn-info btn-sm">Ver Historial</a>
+                                <a asp-action="TreatmentObservation" asp-route-id="@item.IdMedicalHistory" class="btn btn-success btn-sm">Observación de Tratamiento</a>
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+

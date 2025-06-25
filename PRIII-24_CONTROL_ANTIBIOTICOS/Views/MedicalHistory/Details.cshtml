@@ -1,0 +1,246 @@
+﻿@model MedicalHistoryDetailsViewModel
+@{
+    ViewData["Title"] = "Detalles del Historial Médico";
+}
+
+<div class="container mt-5">
+    <!-- datos del paciente -->
+    <div class="card mb-4">
+        <div class="form-row align-items-center mb-3">
+            <div class="col-md-12">
+                <div class="card-header font-weight-bold">Datos del Paciente</div>
+            </div>
+
+        </div>
+
+        <div class="card-body">
+            <div class="form-row align-items-center mb-3">
+                <div class="col-md-2">
+                    <label for="nombre">Nombre(s):</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="nombre" value="@Model.Patient.Name" readonly>
+                </div>
+            </div>
+
+            <div class="form-row align-items-center mb-3">
+                <div class="col-md-2">
+                    <label for="apellidos">Apellido(s):</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="apellidos" value="@Model.Patient.LastName" readonly>
+                </div>
+            </div>
+
+            <div class="form-row align-items-center mb-3">
+                <div class="col-md-2">
+                    <label for="fechanacimiento">Fecha de Nacimiento:</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="date" class="form-control" id="fechanacimiento" value="@Model.Patient.DateOfBirth.ToString("yyyy-MM-dd")" readonly>
+                </div>
+            </div>
+
+            <div class="form-row align-items-center mb-3">
+                <div class="col-md-2">
+                    <label for="ci">Cédula:</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="ci" value="@Model.Patient.Ci" readonly>
+                </div>
+            </div>
+
+            <div class="form-row align-items-center mb-3">
+                <div class="col-md-2">
+                    <label for="peso">Peso (kg):</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="peso" value="@Model.Weight" readonly>
+                </div>
+            </div>
+
+            <div class="form-row align-items-center mb-3">
+                <div class="col-md-2">
+                    <label for="altura">Altura (m):</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="altura" value="@Model.Height" readonly>
+                </div>
+            </div>
+
+            <div class="form-row align-items-center mb-3">
+                <div class="col-md-2">
+                    <label for="imc">IMC:</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="imc" value="@Model.Bmi (@Model.Bmiclassification)" readonly>
+                </div>
+            </div>
+
+            <div class="form-row align-items-center mb-3">
+                <div class="col-md-2">
+                    <label for="fechaevaluacion">Fecha de Registro:</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="fechaevaluacion" value="@Model.RegisterDate.ToShortDateString()" readonly>
+                </div>
+            </div>
+
+            <!-- Diagnóstico -->
+            <div class="form-row align-items-center mb-3">
+                <div class="col-md-2">
+                    <label for="diagnostico">Diagnóstico:</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="diagnostico" value="@Model.Diagnosis" readonly>
+                </div>
+            </div>
+
+            <!-- Alergias -->
+            <div class="form-group">
+                <label>Alergias:</label>
+                @if (Model.Allergies != null && Model.Allergies.Any())
+                {
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr><th>Alergia</th></tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var allergy in Model.Allergies)
+                            {
+                                <tr><td>@allergy.AllergyName</td></tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <p>No tiene alergias registradas.</p>
+                }
+            </div>
+
+            <!-- Medicación de consumo habitual -->
+            <div class="form-group">
+                <label>Medicación de Consumo Habitual:</label>
+                @if (Model.Medicaciones != null && Model.Medicaciones.Any())
+                {
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Medicamento</th>
+                                <th>Dosis</th>
+                                <th>Frecuencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var habitualHistories in Model.Medicaciones)
+                            {
+                                <tr>
+                                    <td>@habitualHistories.Medicamento</td>
+                                    <td>@habitualHistories.Dosis</td>
+                                    <td>@habitualHistories.Frecuency</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <p>No tiene medicaciones registradas.</p>
+                }
+            </div>
+        </div>
+    </div>
+    <!-- formulario de evaluación de administración -->
+    <form id="evaluacion-form">
+        <div class="card mb-4">
+            <div class="card-header font-weight-bold">evaluación de administración</div>
+            <div class="card-body">
+
+                <!-- radio buttons (estado de administración) -->
+                <div class="form-group">
+                    <label>estado de administración:</label>
+                    <br />
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" id="normalidad" name="administracion" value="normalidad" checked>
+                        <label class="form-check-label bg-success text-white p-2" for="normalidad">proceder con normalidad</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" id="precaucion" name="administracion" value="precaucion">
+                        <label class="form-check-label bg-warning text-white p-2" for="precaucion">proceder con precaución</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" id="noproceder" name="administracion" value="noproceder">
+                        <label class="form-check-label bg-danger text-white p-2" for="noproceder">no proceder con la administración</label>
+                    </div>
+                </div>
+
+                <!-- evaluación de dosis (oculto por defecto) -->
+                <div id="evaluacion-dosis" class="form-group" style="display: none;">
+                    <label>evaluación de dosis:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="excesiva" name="dosis" value="excesiva">
+                        <label class="form-check-label" for="excesiva">dosis excesiva</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="insuficiente" name="dosis" value="insuficiente">
+                        <label class="form-check-label" for="insuficiente">dosis insuficiente</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="inadecuada" name="dosis" value="inadecuada">
+                        <label class="form-check-label" for="inadecuada">dosis inadecuada</label>
+                    </div>
+                </div>
+
+                <!-- recomendación (oculto por defecto) -->
+                <div id="recomendacion-div" class="form-group" style="display: none;">
+                    <label for="recomendacion">recomendación:</label>
+                    <textarea class="form-control" id="recomendacion" rows="3" placeholder="escribe una recomendación..."></textarea>
+                </div>
+                @* <a asp-controller="MedicalHistory" asp-action="DownloadPdf" asp-route-id="@Model.IdMedicalHistory">Descargar PDF</a> *@
+                <!-- Botón de descarga con ícono -->
+                <!-- Botón de descarga -->
+                <br />
+                <a asp-controller="MedicalHistory" asp-action="DownloadPdf" asp-route-id="@Model.IdMedicalHistory" class="btn btn-primary d-flex align-items-center justify-content-center" style="width: 200px;">
+                    <span>Download</span>
+                    <i class="bi bi-arrow-down ms-2"></i>
+                </a>
+
+                <!-- botón enviar respuesta -->
+                <button type="submit" class="btn btn-primary">enviar respuesta</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="text-left mb-3">
+        <button onclick="window.history.back();" class="btn btn-secondary">Volver Atrás</button>
+    </div>
+</div>
+<!-- Incluye Bootstrap Icons (para el ícono de la flecha) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+<!-- script para mostrar/ocultar campos según la opción seleccionada -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // función para mostrar/ocultar los campos de evaluación de dosis y recomendación
+        function togglefields() {
+            if ($('#normalidad').is(':checked')) {
+                // ocultar evaluación de dosis y recomendación si está seleccionado "proceder con normalidad"
+                $('#evaluacion-dosis').hide();
+                $('#recomendacion-div').hide();
+            } else {
+                // mostrar evaluación de dosis y recomendación si está seleccionado "precaución" o "no proceder"
+                $('#evaluacion-dosis').show();
+                $('#recomendacion-div').show();
+            }
+        }
+
+        // llamar la función al cambiar el valor de "administracion"
+        $('input[name="administracion"]').change(function () {
+            togglefields();
+        });
+
+        // ejecutar la función al cargar la página para aplicar el estado inicial
+        togglefields();
+    });
+</script>

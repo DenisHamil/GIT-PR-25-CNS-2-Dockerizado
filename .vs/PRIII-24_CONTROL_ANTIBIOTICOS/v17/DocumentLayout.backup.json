@@ -1,0 +1,542 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\models\\bdproa1context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\models\\bdproa1context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\views\\patient\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\views\\patient\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\views\\person\\registerpatient.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\views\\person\\registerpatient.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\views\\registropersonal\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\views\\registropersonal\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\views\\registropersonal\\registropersonal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\views\\registropersonal\\registropersonal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\views\\medicalcouncil\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\views\\medicalcouncil\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\controllers\\registerpersonalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\controllers\\registerpersonalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\controllers\\medicalcouncilcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\controllers\\medicalcouncilcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\controllers\\personcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\controllers\\personcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\views\\medicalhistory\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\views\\medicalhistory\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\views\\vote\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\views\\vote\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\views\\vote\\summary1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\views\\vote\\summary1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\views\\vote\\summary.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\views\\vote\\summary.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\views\\vote\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\views\\vote\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\views\\vote\\hasvote.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\views\\vote\\hasvote.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\views\\vote\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\views\\vote\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\controllers\\votecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\controllers\\votecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\models\\medicalhistorydetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\models\\medicalhistorydetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\models\\votemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\models\\votemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\models\\vote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\models\\vote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\controllers\\administrationrequestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\controllers\\administrationrequestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\models\\medicalhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\models\\medicalhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|c:\\priii-24_control_antibioticos\\priii-24_control_antibioticos\\views\\person\\registeruser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E1F3D2E6-89A6-484C-9CFC-11766A97A32F}|PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS.csproj|solutionrelative:priii-24_control_antibioticos\\views\\person\\registeruser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 282,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\docker-compose.yml",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\docker-compose.yml",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\docker-compose.yml",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-05-25T19:08:20.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Dockerfile",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Dockerfile",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Dockerfile",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-25T19:08:25.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PatientController.cs",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\PatientController.cs",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\PatientController.cs",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\PatientController.cs",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\PatientController.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAmwIkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T20:13:40.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\appsettings.json",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\appsettings.json",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\appsettings.json",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-24T12:49:13.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Patient\\Index.cshtml",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Patient\\Index.cshtml",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Patient\\Index.cshtml",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Patient\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAGsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T20:10:27.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegisterPatient.cshtml",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Person\\RegisterPatient.cshtml",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Person\\RegisterPatient.cshtml",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Person\\RegisterPatient.cshtml",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Person\\RegisterPatient.cshtml",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEsAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T20:06:29.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BdProa1Context.cs",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\BdProa1Context.cs",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\BdProa1Context.cs",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\BdProa1Context.cs",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\BdProa1Context.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAiwDcAAACHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T19:07:27.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\MedicalCouncil\\Index.cshtml",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\MedicalCouncil\\Index.cshtml",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\MedicalCouncil\\Index.cshtml",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\MedicalCouncil\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIYAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-28T03:10:48.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RegisterPersonalController.cs",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\RegisterPersonalController.cs",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\RegisterPersonalController.cs",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\RegisterPersonalController.cs",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\RegisterPersonalController.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAADwv7IAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T20:30:02.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RegistroPersonal.cshtml",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\RegistroPersonal\\RegistroPersonal.cshtml",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\RegistroPersonal\\RegistroPersonal.cshtml",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\RegistroPersonal\\RegistroPersonal.cshtml",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\RegistroPersonal\\RegistroPersonal.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAIsAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T20:57:16.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PersonController.cs",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\PersonController.cs",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\PersonController.cs",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\PersonController.cs",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\PersonController.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAuwMYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T20:16:49.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\RegistroPersonal\\Index.cshtml",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\RegistroPersonal\\Index.cshtml",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\RegistroPersonal\\Index.cshtml",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\RegistroPersonal\\Index.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T20:12:44.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MedicalCouncilController.cs",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\MedicalCouncilController.cs",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\MedicalCouncilController.cs",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\MedicalCouncilController.cs",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\MedicalCouncilController.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAkwFQAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T03:10:07.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Summary.cshtml",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Summary.cshtml",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Summary.cshtml",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Summary.cshtml",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Summary.cshtml",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAmwN4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T23:26:57.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAgwFUAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T02:04:37.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "VoteController.cs",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\VoteController.cs",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\VoteController.cs",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\VoteController.cs",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\VoteController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T23:47:59.523Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\MedicalHistory\\Create.cshtml",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\MedicalHistory\\Create.cshtml",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\MedicalHistory\\Create.cshtml",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\MedicalHistory\\Create.cshtml",
+              "ViewState": "AgIAABIDAAAAAAAAAAAAwCMDAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-28T01:19:24.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Program.cs",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Program.cs",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Program.cs",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Program.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T19:29:41.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "HasVote.cshtml",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\HasVote.cshtml",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\HasVote.cshtml",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\HasVote.cshtml",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\HasVote.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T23:26:44.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Details.cshtml",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Details.cshtml",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Details.cshtml",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Details.cshtml",
+              "ViewState": "AgIAANgAAAAAAAAAAAAmwOoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T23:25:51.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Error.cshtml",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Error.cshtml",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Error.cshtml",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T23:26:42.574Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Index.cshtml",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Index.cshtml",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Index.cshtml",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Index.cshtml",
+              "ViewState": "AgIAACUAAAAAAAAAAAAmwB8AAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T23:25:10.653Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Summary1.cshtml",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Summary1.cshtml",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Summary1.cshtml",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Summary1.cshtml",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Vote\\Summary1.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T23:28:28.861Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "MedicalHistoryDetailsViewModel.cs",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\MedicalHistoryDetailsViewModel.cs",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\MedicalHistoryDetailsViewModel.cs",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\MedicalHistoryDetailsViewModel.cs",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\MedicalHistoryDetailsViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T23:27:59.497Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Vote.cs",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\Vote.cs",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\Vote.cs",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\Vote.cs",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\Vote.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T23:42:22.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "VoteModel.cs",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\VoteModel.cs",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\VoteModel.cs",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\VoteModel.cs",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\VoteModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T23:42:31.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "AdministrationRequestController.cs",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\AdministrationRequestController.cs",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\AdministrationRequestController.cs",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\AdministrationRequestController.cs",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Controllers\\AdministrationRequestController.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAwE0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T21:45:51.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "MedicalHistory.cs",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\MedicalHistory.cs",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\MedicalHistory.cs",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\MedicalHistory.cs",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\MedicalHistory.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T21:20:06.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\Patient.cs",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\Patient.cs",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\Patient.cs",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\Patient.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T20:27:27.895Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\User.cs",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\User.cs",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\User.cs",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\User.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBwAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T20:27:09.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Person.cs",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\Person.cs",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\Person.cs",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\Person.cs",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Models\\Person.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T20:27:14.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "RegisterUser.cshtml",
+              "DocumentMoniker": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Person\\RegisterUser.cshtml",
+              "RelativeDocumentMoniker": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Person\\RegisterUser.cshtml",
+              "ToolTip": "C:\\PRIII-24_CONTROL_ANTIBIOTICOS\\PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Person\\RegisterUser.cshtml",
+              "RelativeToolTip": "PRIII-24_CONTROL_ANTIBIOTICOS\\Views\\Person\\RegisterUser.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T20:06:27.862Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
